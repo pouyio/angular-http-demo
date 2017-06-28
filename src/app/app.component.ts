@@ -11,19 +11,19 @@ import 'rxjs/add/operator/do';
 })
 export class AppComponent {
 
-  response1: number;
-  response2: Observable<number>;
+  response1: string;
+  response2: Observable<string>;
 
   constructor(private api: WarsService) {
 
     // Subscription
-    this.api.getPlanets().subscribe(r => {
+    this.api.getPlanet(1).subscribe(r => {
       this.response1 = r;
       console.log('Primera ', this.response1);
     });
 
     // Using Observable
-    this.response2 = this.api.getPlanets().do(console.log);
+    this.response2 = this.api.getPlanet(2).do(console.log);
   }
 
 }
