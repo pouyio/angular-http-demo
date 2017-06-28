@@ -1,6 +1,5 @@
 <h1>Angular HTTP Module</h1>
 <ul>
-  <li><a routerLink="/">Home</a></li>
-  <li><a routerLink="/demo-1">Demo 1</a></li>
+  <li *ngFor="let route of routes"><a routerLink="/{{route.path}}">{{route.path}}</a></li>
 </ul>
 <router-outlet></router-outlet>
