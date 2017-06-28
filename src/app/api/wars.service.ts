@@ -10,10 +10,11 @@ export class WarsService {
 
   constructor(private http: Http) { }
 
+
+  // Extracting data
   getPlanets(): Observable<number> {
     return this.http.get(`${this.baseUrl}/planets`, {headers: this.getHeaders()}).map(r => r.json());
   }
-
 
   private getHeaders(){
     let headers = new Headers();

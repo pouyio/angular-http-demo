@@ -10,18 +10,19 @@ import 'rxjs/add/operator/do';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Angular HTTP Module';
 
   response1: number;
   response2: Observable<number>;
 
   constructor(private api: WarsService) {
 
+    // Subscription
     this.api.getPlanets().subscribe(r => {
       this.response1 = r;
       console.log('Primera ', this.response1);
     });
 
+    // Using Observable
     this.response2 = this.api.getPlanets().do(console.log);
   }
 
