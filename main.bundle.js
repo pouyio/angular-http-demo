@@ -68,7 +68,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "ul {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  padding: 0;\n  list-style: none;\n  -ms-flex-pack: distribute;\n      justify-content: space-around;\n}\n\nh1 {\n  text-align: center;\n}\n", ""]);
+exports.push([module.i, "ul {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  padding: 0;\n  list-style: none;\n  -ms-flex-pack: distribute;\n      justify-content: space-around;\n}\n\ndiv {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: baseline;\n      -ms-flex-align: baseline;\n          align-items: baseline;\n}\n\ncode {\n  padding-left: 1em;\n}\n", ""]);
 
 // exports
 
@@ -81,7 +81,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Angular HTTP Module</h1>\n<ul>\n  <li *ngFor=\"let route of routes\"><a routerLink=\"/{{route.path}}\">{{route.path}}</a></li>\n</ul>\n<router-outlet></router-outlet>\n"
+module.exports = "<div>\n  <h1>Angular HTTP Module</h1>\n  <code><small><a href=\"https://github.com/pouyio/angular-http-demo\">Repo</a></small></code>\n</div>\n<ul>\n  <li *ngFor=\"let route of routes\"><a routerLink=\"/{{route.path}}\">{{route.path}}</a></li>\n</ul>\n<router-outlet></router-outlet>\n"
 
 /***/ }),
 
