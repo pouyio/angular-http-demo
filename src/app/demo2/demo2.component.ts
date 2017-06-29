@@ -1,15 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { WarsService } from '../api/wars.service';
+import { Observable } from 'rxjs/Rx';
 
 @Component({
   selector: 'app-demo2',
   templateUrl: './demo2.component.html',
   styleUrls: ['./demo2.component.css']
 })
-export class Demo2Component implements OnInit {
+export class Demo2Component {
 
-  constructor() { }
+  results: Observable<any>;
 
-  ngOnInit() {
+  constructor(private api: WarsService) {
+  }
+
+  search(term: string) {
+    this.results = this.api.search(term);
   }
 
 }

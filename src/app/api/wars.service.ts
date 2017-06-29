@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Response, Headers } from '@angular/http';
+import { Http, Response, Headers, URLSearchParams } from '@angular/http';
 import { Observable,  } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 
@@ -19,6 +19,17 @@ export class WarsService {
     let headers = new Headers();
     headers.append('Accept', 'application/json');
     return headers;
+  }
+
+
+
+  // demo 2
+  search (term: string) {
+    let search = new URLSearchParams()
+    search.set('search', term);
+    return this.http
+      .get(`${this.baseUrl}/people`, { search })
+      .map(r => r.json());
   }
 
 }

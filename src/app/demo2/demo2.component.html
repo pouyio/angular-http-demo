@@ -1,3 +1,7 @@
-<p>
-  demo2 works!
-</p>
+<input #term type="text" (keyup)="search(term.value)">
+<ul>
+  <li *ngFor="let result of (results | async)?.results"> {{result.name}} - {{result.eye_color}} </li>
+</ul>
+<!-- <pre>
+  {{results | async | json}}
+</pre> -->
