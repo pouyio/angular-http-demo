@@ -5,6 +5,12 @@ ul {
   justify-content: space-around;
 }
 
-h1 {
-  text-align: center;
+div {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+
+code {
+  padding-left: 1em;
 }
