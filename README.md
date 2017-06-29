@@ -1,4 +1,4 @@
-# 🌏 [ONLINE DEMOS](https://pouyio.github.io/angular-http-demo) 🌏
+# 🌏 [ONLINE DEMOS](https://pouyio.github.io/angular-http-demo) 🌏 [![Build Status](https://travis-ci.org/pouyio/angular-http-demo.svg?branch=master)](https://travis-ci.org/pouyio/angular-http-demo)
 
 Some demos on what the [@angular/http](https://angular.io/guide/http) module can do.
 
