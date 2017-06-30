@@ -1,6 +1,8 @@
 # 🌏 [ONLINE DEMOS](https://pouyio.github.io/angular-http-demo) 🌏 [![Build Status](https://travis-ci.org/pouyio/angular-http-demo.svg?branch=master)](https://travis-ci.org/pouyio/angular-http-demo)
 
-Some demos on what the [@angular/http](https://angular.io/guide/http) module can do.
+This repo contains some demos on what the [@angular/http](https://angular.io/guide/http) module can do.
+
+Google slides [here](https://docs.google.com/presentation/d/1lXmJzlKmAMJX8peNNn8YP4T1BdsHSO4kPa8iEuR1bTU/edit?usp=sharing)
 
 ## Local server
 
