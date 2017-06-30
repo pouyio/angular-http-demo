@@ -10,6 +10,8 @@ import { AppComponent } from './app.component';
 
 import { WarsService } from './api/wars.service';
 import { PlanetResolve } from './planet-resolve';
+import { LetMeInGuard, LetMeOutGuard } from './let-me-guard';
+
 import { Demo1Component } from './demo1/demo1.component';
 import { Demo2Component } from './demo2/demo2.component';
 import { Demo3Component } from './demo3/demo3.component';
@@ -30,7 +32,7 @@ import { Demo4Component } from './demo4/demo4.component';
     FormsModule,
     RouterModule.forRoot(AppRoutes)
   ],
-  providers: [WarsService, PlanetResolve],
+  providers: [WarsService, PlanetResolve, LetMeInGuard, LetMeOutGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
