@@ -1,23 +1,19 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpModule} from '@angular/http';
 
+import { AppRoutes } from './app.routes';
+
 import { AppComponent } from './app.component';
 
 import { WarsService } from './api/wars.service';
+import { PlanetResolve } from './planet-resolve';
 import { Demo1Component } from './demo1/demo1.component';
 import { Demo2Component } from './demo2/demo2.component';
 import { Demo3Component } from './demo3/demo3.component';
 import { Demo4Component } from './demo4/demo4.component';
-
-export const appRoutes: Routes = [
-  { path: 'demo-1', component: Demo1Component },
-  { path: 'demo-2', component: Demo2Component },
-  { path: 'demo-3', component: Demo3Component },
-  { path: 'demo-4', component: Demo4Component },
-];
 
 @NgModule({
   declarations: [
@@ -32,9 +28,9 @@ export const appRoutes: Routes = [
     HttpModule,
     ReactiveFormsModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(AppRoutes)
   ],
-  providers: [WarsService],
+  providers: [WarsService, PlanetResolve],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

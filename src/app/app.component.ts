@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { appRoutes } from './app.module';
 
 @Component({
   selector: 'app-root',
@@ -8,8 +7,13 @@ import { appRoutes } from './app.module';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  routes: Routes;
+  routes: any[];
   constructor() {
-    this.routes = appRoutes;
+    this.routes = [
+      'demo-1',
+      'demo-2',
+      'demo-3/10',
+      'demo-4'
+    ];
   }
 }

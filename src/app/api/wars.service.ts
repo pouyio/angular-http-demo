@@ -10,7 +10,6 @@ export class WarsService {
 
   constructor(private http: Http) { }
 
-  // Extracting data
   getPlanet(id: number): Observable<any> {
     return this.http.get(`${this.baseUrl}/planets/${id}`, {headers: this.getHeaders()}).map(r => r.json());
   }
@@ -20,8 +19,6 @@ export class WarsService {
     headers.append('Accept', 'application/json');
     return headers;
   }
-
-
 
   // demo 2
   search (term: string) {
