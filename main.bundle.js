@@ -562,7 +562,9 @@ var isNope = function (counts) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__api_wars_service__ = __webpack_require__("../../../../../src/app/api/wars.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Rx__ = __webpack_require__("../../../../rxjs/Rx.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_Rx__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__api_wars_service__ = __webpack_require__("../../../../../src/app/api/wars.service.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PlanetResolve; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -575,17 +577,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 var PlanetResolve = (function () {
     function PlanetResolve(api) {
-        var _this = this;
         this.api = api;
-        this.resolve = function (route) { return _this.api.getPlanet(+route.paramMap.get('id')); };
     }
+    PlanetResolve.prototype.resolve = function (route) {
+        return this.api.getPlanet(+route.paramMap.get('id'))
+            .catch(this.errorHandling);
+    };
+    PlanetResolve.prototype.errorHandling = function (error) {
+        console.warn('There was an error: ', error.json());
+        return __WEBPACK_IMPORTED_MODULE_1_rxjs_Rx__["Observable"].of({});
+    };
     return PlanetResolve;
 }());
 PlanetResolve = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Injectable */])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__api_wars_service__["a" /* WarsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__api_wars_service__["a" /* WarsService */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__api_wars_service__["a" /* WarsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__api_wars_service__["a" /* WarsService */]) === "function" && _a || Object])
 ], PlanetResolve);
 
 var _a;
