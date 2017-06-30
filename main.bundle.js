@@ -39,7 +39,6 @@ var WarsService = (function () {
         this.http = http;
         this.baseUrl = 'http://swapi.co/api';
     }
-    // Extracting data
     WarsService.prototype.getPlanet = function (id) {
         return this.http.get(this.baseUrl + "/planets/" + id, { headers: this.getHeaders() }).map(function (r) { return r.json(); });
     };
@@ -89,7 +88,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div>\n  <h1>Angular HTTP Module</h1>\n  <code><small><a href=\"https://github.com/pouyio/angular-http-demo\">Repo</a></small></code>\n</div>\n<ul>\n  <li *ngFor=\"let route of routes\"><a routerLink=\"/{{route.path}}\">{{route.path}}</a></li>\n</ul>\n<router-outlet></router-outlet>\n"
+module.exports = "<div>\n  <h1>Angular HTTP Module</h1>\n  <code><small><a href=\"https://github.com/pouyio/angular-http-demo\">Repo</a></small></code>\n</div>\n<ul>\n  <li *ngFor=\"let route of routes\"><a routerLink=\"/{{route}}\">{{route}}</a></li>\n</ul>\n<router-outlet></router-outlet>\n"
 
 /***/ }),
 
@@ -98,7 +97,6 @@ module.exports = "<div>\n  <h1>Angular HTTP Module</h1>\n  <code><small><a href=
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__("../../../../../src/app/app.module.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -110,10 +108,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
-
 var AppComponent = (function () {
     function AppComponent() {
-        this.routes = __WEBPACK_IMPORTED_MODULE_1__app_module__["b" /* appRoutes */];
+        this.routes = [
+            'demo-1',
+            'demo-2',
+            'demo-3/10',
+            'demo-4'
+        ];
     }
     return AppComponent;
 }());
@@ -139,13 +141,14 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__api_wars_service__ = __webpack_require__("../../../../../src/app/api/wars.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__demo1_demo1_component__ = __webpack_require__("../../../../../src/app/demo1/demo1.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__demo2_demo2_component__ = __webpack_require__("../../../../../src/app/demo2/demo2.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__demo3_demo3_component__ = __webpack_require__("../../../../../src/app/demo3/demo3.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__demo4_demo4_component__ = __webpack_require__("../../../../../src/app/demo4/demo4.component.ts");
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return appRoutes; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_routes__ = __webpack_require__("../../../../../src/app/app.routes.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__api_wars_service__ = __webpack_require__("../../../../../src/app/api/wars.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__planet_resolve__ = __webpack_require__("../../../../../src/app/planet-resolve.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__demo1_demo1_component__ = __webpack_require__("../../../../../src/app/demo1/demo1.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__demo2_demo2_component__ = __webpack_require__("../../../../../src/app/demo2/demo2.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__demo3_demo3_component__ = __webpack_require__("../../../../../src/app/demo3/demo3.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__demo4_demo4_component__ = __webpack_require__("../../../../../src/app/demo4/demo4.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -164,12 +167,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var appRoutes = [
-    { path: 'demo-1', component: __WEBPACK_IMPORTED_MODULE_7__demo1_demo1_component__["a" /* Demo1Component */] },
-    { path: 'demo-2', component: __WEBPACK_IMPORTED_MODULE_8__demo2_demo2_component__["a" /* Demo2Component */] },
-    { path: 'demo-3', component: __WEBPACK_IMPORTED_MODULE_9__demo3_demo3_component__["a" /* Demo3Component */] },
-    { path: 'demo-4', component: __WEBPACK_IMPORTED_MODULE_10__demo4_demo4_component__["a" /* Demo4Component */] },
-];
+
+
 var AppModule = (function () {
     function AppModule() {
     }
@@ -178,25 +177,50 @@ var AppModule = (function () {
 AppModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__angular_core__["b" /* NgModule */])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */],
-            __WEBPACK_IMPORTED_MODULE_7__demo1_demo1_component__["a" /* Demo1Component */],
-            __WEBPACK_IMPORTED_MODULE_8__demo2_demo2_component__["a" /* Demo2Component */],
-            __WEBPACK_IMPORTED_MODULE_9__demo3_demo3_component__["a" /* Demo3Component */],
-            __WEBPACK_IMPORTED_MODULE_10__demo4_demo4_component__["a" /* Demo4Component */]
+            __WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */],
+            __WEBPACK_IMPORTED_MODULE_9__demo1_demo1_component__["a" /* Demo1Component */],
+            __WEBPACK_IMPORTED_MODULE_10__demo2_demo2_component__["a" /* Demo2Component */],
+            __WEBPACK_IMPORTED_MODULE_11__demo3_demo3_component__["a" /* Demo3Component */],
+            __WEBPACK_IMPORTED_MODULE_12__demo4_demo4_component__["a" /* Demo4Component */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
             __WEBPACK_IMPORTED_MODULE_4__angular_http__["a" /* HttpModule */],
             __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* ReactiveFormsModule */],
             __WEBPACK_IMPORTED_MODULE_3__angular_forms__["b" /* FormsModule */],
-            __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* RouterModule */].forRoot(appRoutes)
+            __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* RouterModule */].forRoot(__WEBPACK_IMPORTED_MODULE_5__app_routes__["a" /* AppRoutes */])
         ],
-        providers: [__WEBPACK_IMPORTED_MODULE_6__api_wars_service__["a" /* WarsService */]],
-        bootstrap: [__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */]]
+        providers: [__WEBPACK_IMPORTED_MODULE_7__api_wars_service__["a" /* WarsService */], __WEBPACK_IMPORTED_MODULE_8__planet_resolve__["a" /* PlanetResolve */]],
+        bootstrap: [__WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
 
 //# sourceMappingURL=app.module.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/app.routes.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__demo1_demo1_component__ = __webpack_require__("../../../../../src/app/demo1/demo1.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__demo2_demo2_component__ = __webpack_require__("../../../../../src/app/demo2/demo2.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__demo3_demo3_component__ = __webpack_require__("../../../../../src/app/demo3/demo3.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__demo4_demo4_component__ = __webpack_require__("../../../../../src/app/demo4/demo4.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__planet_resolve__ = __webpack_require__("../../../../../src/app/planet-resolve.ts");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppRoutes; });
+
+
+
+
+
+var AppRoutes = [
+    { path: 'demo-1', component: __WEBPACK_IMPORTED_MODULE_0__demo1_demo1_component__["a" /* Demo1Component */] },
+    { path: 'demo-2', component: __WEBPACK_IMPORTED_MODULE_1__demo2_demo2_component__["a" /* Demo2Component */] },
+    { path: 'demo-3/:id', component: __WEBPACK_IMPORTED_MODULE_2__demo3_demo3_component__["a" /* Demo3Component */], resolve: { planet: __WEBPACK_IMPORTED_MODULE_4__planet_resolve__["a" /* PlanetResolve */] } },
+    { path: 'demo-4', component: __WEBPACK_IMPORTED_MODULE_3__demo4_demo4_component__["a" /* Demo4Component */] },
+];
+//# sourceMappingURL=app.routes.js.map
 
 /***/ }),
 
@@ -358,7 +382,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "pre {\n  text-align: left;\n}\n", ""]);
 
 // exports
 
@@ -371,7 +395,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/demo3/demo3.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  demo3 works!\n</p>\n"
+module.exports = "<h2>Data resolved before the component loads </h2>\n\n<pre>\n  {{info | json}}\n</pre>\n"
 
 /***/ }),
 
@@ -380,6 +404,7 @@ module.exports = "<p>\n  demo3 works!\n</p>\n"
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Demo3Component; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -391,8 +416,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var Demo3Component = (function () {
-    function Demo3Component() {
+    function Demo3Component(route) {
+        this.route = route;
+        this.info = this.route.snapshot.data['planet'];
     }
     Demo3Component.prototype.ngOnInit = function () {
     };
@@ -404,9 +432,10 @@ Demo3Component = __decorate([
         template: __webpack_require__("../../../../../src/app/demo3/demo3.component.html"),
         styles: [__webpack_require__("../../../../../src/app/demo3/demo3.component.css")]
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */]) === "function" && _a || Object])
 ], Demo3Component);
 
+var _a;
 //# sourceMappingURL=demo3.component.js.map
 
 /***/ }),
@@ -469,6 +498,42 @@ Demo4Component = __decorate([
 ], Demo4Component);
 
 //# sourceMappingURL=demo4.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/planet-resolve.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__api_wars_service__ = __webpack_require__("../../../../../src/app/api/wars.service.ts");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PlanetResolve; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var PlanetResolve = (function () {
+    function PlanetResolve(api) {
+        var _this = this;
+        this.api = api;
+        this.resolve = function (route) { return _this.api.getPlanet(+route.paramMap.get('id')); };
+    }
+    return PlanetResolve;
+}());
+PlanetResolve = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Injectable */])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__api_wars_service__["a" /* WarsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__api_wars_service__["a" /* WarsService */]) === "function" && _a || Object])
+], PlanetResolve);
+
+var _a;
+//# sourceMappingURL=planet-resolve.js.map
 
 /***/ }),
 
