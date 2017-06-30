@@ -42,18 +42,17 @@ var WarsService = (function () {
     WarsService.prototype.getPlanet = function (id) {
         return this.http.get(this.baseUrl + "/planets/" + id, { headers: this.getHeaders() }).map(function (r) { return r.json(); });
     };
-    WarsService.prototype.getHeaders = function () {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Headers */]();
-        headers.append('Accept', 'application/json');
-        return headers;
-    };
-    // demo 2
     WarsService.prototype.search = function (term) {
-        var search = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* URLSearchParams */]();
+        var search = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* URLSearchParams */]();
         search.set('search', term);
         return this.http
-            .get(this.baseUrl + "/people", { search: search })
+            .get(this.baseUrl + "/people", { search: search, headers: this.getHeaders() })
             .map(function (r) { return r.json(); });
+    };
+    WarsService.prototype.getHeaders = function () {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */]();
+        headers.append('Accept', 'application/json');
+        return headers;
     };
     return WarsService;
 }());
@@ -522,10 +521,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 var LetMeInGuard = (function () {
     function LetMeInGuard() {
+        this.counter = 0;
     }
     LetMeInGuard.prototype.canActivate = function () {
-        var pass = (Math.random() > 0.8);
-        return __WEBPACK_IMPORTED_MODULE_1_rxjs_Rx__["Observable"].of(pass);
+        this.counter++;
+        return __WEBPACK_IMPORTED_MODULE_1_rxjs_Rx__["Observable"].of(isNope(this.counter));
     };
     return LetMeInGuard;
 }());
@@ -535,10 +535,11 @@ LetMeInGuard = __decorate([
 
 var LetMeOutGuard = (function () {
     function LetMeOutGuard() {
+        this.counter = 0;
     }
     LetMeOutGuard.prototype.canDeactivate = function () {
-        var leave = (Math.random() > 0.8);
-        return __WEBPACK_IMPORTED_MODULE_1_rxjs_Rx__["Observable"].of(leave);
+        this.counter++;
+        return __WEBPACK_IMPORTED_MODULE_1_rxjs_Rx__["Observable"].of(isNope(this.counter));
     };
     return LetMeOutGuard;
 }());
@@ -546,6 +547,12 @@ LetMeOutGuard = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Injectable */])()
 ], LetMeOutGuard);
 
+var isNope = function (counts) {
+    var yep = !Boolean(counts % 3);
+    if (!yep)
+        console.warn('nope!', counts);
+    return yep;
+};
 //# sourceMappingURL=let-me-guard.js.map
 
 /***/ }),
