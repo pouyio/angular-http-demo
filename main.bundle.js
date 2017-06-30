@@ -48,11 +48,19 @@ var WarsService = (function () {
         headers.append('Accept', 'application/json');
         return headers;
     };
+    // demo 2
+    WarsService.prototype.search = function (term) {
+        var search = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* URLSearchParams */]();
+        search.set('search', term);
+        return this.http
+            .get(this.baseUrl + "/people", { search: search })
+            .map(function (r) { return r.json(); });
+    };
     return WarsService;
 }());
 WarsService = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Injectable */])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* Http */]) === "function" && _a || Object])
 ], WarsService);
 
 var _a;
@@ -110,7 +118,7 @@ var AppComponent = (function () {
     return AppComponent;
 }());
 AppComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_10" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
         selector: 'app-root',
         template: __webpack_require__("../../../../../src/app/app.component.html"),
         styles: [__webpack_require__("../../../../../src/app/app.component.css")]
@@ -129,13 +137,14 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__api_wars_service__ = __webpack_require__("../../../../../src/app/api/wars.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__demo1_demo1_component__ = __webpack_require__("../../../../../src/app/demo1/demo1.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__demo2_demo2_component__ = __webpack_require__("../../../../../src/app/demo2/demo2.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__demo3_demo3_component__ = __webpack_require__("../../../../../src/app/demo3/demo3.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__demo4_demo4_component__ = __webpack_require__("../../../../../src/app/demo4/demo4.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__api_wars_service__ = __webpack_require__("../../../../../src/app/api/wars.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__demo1_demo1_component__ = __webpack_require__("../../../../../src/app/demo1/demo1.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__demo2_demo2_component__ = __webpack_require__("../../../../../src/app/demo2/demo2.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__demo3_demo3_component__ = __webpack_require__("../../../../../src/app/demo3/demo3.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__demo4_demo4_component__ = __webpack_require__("../../../../../src/app/demo4/demo4.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return appRoutes; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -154,11 +163,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 var appRoutes = [
-    { path: 'demo-1', component: __WEBPACK_IMPORTED_MODULE_6__demo1_demo1_component__["a" /* Demo1Component */] },
-    { path: 'demo-2', component: __WEBPACK_IMPORTED_MODULE_7__demo2_demo2_component__["a" /* Demo2Component */] },
-    { path: 'demo-3', component: __WEBPACK_IMPORTED_MODULE_8__demo3_demo3_component__["a" /* Demo3Component */] },
-    { path: 'demo-4', component: __WEBPACK_IMPORTED_MODULE_9__demo4_demo4_component__["a" /* Demo4Component */] },
+    { path: 'demo-1', component: __WEBPACK_IMPORTED_MODULE_7__demo1_demo1_component__["a" /* Demo1Component */] },
+    { path: 'demo-2', component: __WEBPACK_IMPORTED_MODULE_8__demo2_demo2_component__["a" /* Demo2Component */] },
+    { path: 'demo-3', component: __WEBPACK_IMPORTED_MODULE_9__demo3_demo3_component__["a" /* Demo3Component */] },
+    { path: 'demo-4', component: __WEBPACK_IMPORTED_MODULE_10__demo4_demo4_component__["a" /* Demo4Component */] },
 ];
 var AppModule = (function () {
     function AppModule() {
@@ -168,19 +178,21 @@ var AppModule = (function () {
 AppModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__angular_core__["b" /* NgModule */])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */],
-            __WEBPACK_IMPORTED_MODULE_6__demo1_demo1_component__["a" /* Demo1Component */],
-            __WEBPACK_IMPORTED_MODULE_7__demo2_demo2_component__["a" /* Demo2Component */],
-            __WEBPACK_IMPORTED_MODULE_8__demo3_demo3_component__["a" /* Demo3Component */],
-            __WEBPACK_IMPORTED_MODULE_9__demo4_demo4_component__["a" /* Demo4Component */]
+            __WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */],
+            __WEBPACK_IMPORTED_MODULE_7__demo1_demo1_component__["a" /* Demo1Component */],
+            __WEBPACK_IMPORTED_MODULE_8__demo2_demo2_component__["a" /* Demo2Component */],
+            __WEBPACK_IMPORTED_MODULE_9__demo3_demo3_component__["a" /* Demo3Component */],
+            __WEBPACK_IMPORTED_MODULE_10__demo4_demo4_component__["a" /* Demo4Component */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
-            __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* HttpModule */],
+            __WEBPACK_IMPORTED_MODULE_4__angular_http__["a" /* HttpModule */],
+            __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* ReactiveFormsModule */],
+            __WEBPACK_IMPORTED_MODULE_3__angular_forms__["b" /* FormsModule */],
             __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* RouterModule */].forRoot(appRoutes)
         ],
-        providers: [__WEBPACK_IMPORTED_MODULE_5__api_wars_service__["a" /* WarsService */]],
-        bootstrap: [__WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */]]
+        providers: [__WEBPACK_IMPORTED_MODULE_6__api_wars_service__["a" /* WarsService */]],
+        bootstrap: [__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
 
@@ -252,7 +264,7 @@ var Demo1Component = (function () {
     return Demo1Component;
 }());
 Demo1Component = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_10" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
         selector: 'app-demo1',
         template: __webpack_require__("../../../../../src/app/demo1/demo1.component.html"),
         styles: [__webpack_require__("../../../../../src/app/demo1/demo1.component.css")]
@@ -273,7 +285,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "pre {\n  text-align: left;\n}\n\nul {\n  padding: 0;\n  list-style: none;\n}\n", ""]);
 
 // exports
 
@@ -286,7 +298,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/demo2/demo2.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  demo2 works!\n</p>\n"
+module.exports = "<h2>Amazing reactive search</h2>\n\n<input type=\"text\" [formControl]=\"term\">\n\n<ul>\n  <li *ngFor=\"let result of results | async\"> {{result.name}} - {{result.eye_color}} </li>\n</ul>\n"
 
 /***/ }),
 
@@ -295,6 +307,8 @@ module.exports = "<p>\n  demo2 works!\n</p>\n"
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__api_wars_service__ = __webpack_require__("../../../../../src/app/api/wars.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Demo2Component; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -306,22 +320,32 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
 var Demo2Component = (function () {
-    function Demo2Component() {
+    function Demo2Component(api) {
+        this.api = api;
+        this.term = new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormControl */]();
+        // Oobservable<any[]>  Observable<string>
+        this.results = this.term.valueChanges
+            .filter(function (s) { return s.length; })
+            .debounceTime(400)
+            .distinctUntilChanged()
+            .switchMap(function (term) { return api.search(term); })
+            .map(function (r) { return r.results; });
     }
-    Demo2Component.prototype.ngOnInit = function () {
-    };
     return Demo2Component;
 }());
 Demo2Component = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_10" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
         selector: 'app-demo2',
         template: __webpack_require__("../../../../../src/app/demo2/demo2.component.html"),
         styles: [__webpack_require__("../../../../../src/app/demo2/demo2.component.css")]
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__api_wars_service__["a" /* WarsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__api_wars_service__["a" /* WarsService */]) === "function" && _a || Object])
 ], Demo2Component);
 
+var _a;
 //# sourceMappingURL=demo2.component.js.map
 
 /***/ }),
@@ -375,7 +399,7 @@ var Demo3Component = (function () {
     return Demo3Component;
 }());
 Demo3Component = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_10" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
         selector: 'app-demo3',
         template: __webpack_require__("../../../../../src/app/demo3/demo3.component.html"),
         styles: [__webpack_require__("../../../../../src/app/demo3/demo3.component.css")]
@@ -436,7 +460,7 @@ var Demo4Component = (function () {
     return Demo4Component;
 }());
 Demo4Component = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_10" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
         selector: 'app-demo4',
         template: __webpack_require__("../../../../../src/app/demo4/demo4.component.html"),
         styles: [__webpack_require__("../../../../../src/app/demo4/demo4.component.css")]
@@ -474,6 +498,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__("../../../platform-browser-dynamic/@angular/platform-browser-dynamic.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__("../../../../../src/app/app.module.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_filter__ = __webpack_require__("../../../../rxjs/add/operator/filter.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_filter___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_filter__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_debounceTime__ = __webpack_require__("../../../../rxjs/add/operator/debounceTime.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_debounceTime___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_debounceTime__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_distinctUntilChanged__ = __webpack_require__("../../../../rxjs/add/operator/distinctUntilChanged.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_distinctUntilChanged___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_distinctUntilChanged__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_add_operator_switchMap__ = __webpack_require__("../../../../rxjs/add/operator/switchMap.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_add_operator_switchMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_rxjs_add_operator_switchMap__);
+
+
+
+
+
 
 
 
