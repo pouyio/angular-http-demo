@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { WarsService } from '../api/wars.service';
 import { Observable } from 'rxjs/Rx';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-demo2',
@@ -9,13 +10,20 @@ import { Observable } from 'rxjs/Rx';
 })
 export class Demo2Component {
 
-  results: Observable<any>;
+  term = new FormControl();
+
+  results: Observable<any[]>;
 
   constructor(private api: WarsService) {
-  }
+    // Oobservable<any[]>  Observable<string>
+    this.results = this.term.valueChanges
+                    .filter(s => s.length)
+                    .debounceTime(400)
+                    .distinctUntilChanged()
+                    .switchMap(term => api.search(term))
+                    .map(r => r.results);
 
-  search(term: string) {
-    this.results = this.api.search(term);
+
   }
 
 }

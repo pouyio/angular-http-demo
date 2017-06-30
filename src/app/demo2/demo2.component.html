@@ -1,7 +1,7 @@
-<input #term type="text" (keyup)="search(term.value)">
+<h2>Amazing reactive search</h2>
+
+<input type="text" [formControl]="term">
+
 <ul>
-  <li *ngFor="let result of (results | async)?.results"> {{result.name}} - {{result.eye_color}} </li>
+  <li *ngFor="let result of results | async"> {{result.name}} - {{result.eye_color}} </li>
 </ul>
-<!-- <pre>
-  {{results | async | json}}
-</pre> -->

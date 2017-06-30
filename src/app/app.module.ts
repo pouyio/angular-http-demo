@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpModule} from '@angular/http';
 
 import { AppComponent } from './app.component';
@@ -29,6 +30,8 @@ export const appRoutes: Routes = [
   imports: [
     BrowserModule,
     HttpModule,
+    ReactiveFormsModule,
+    FormsModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [WarsService],
