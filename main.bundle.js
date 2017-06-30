@@ -145,10 +145,11 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__api_wars_service__ = __webpack_require__("../../../../../src/app/api/wars.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__planet_resolve__ = __webpack_require__("../../../../../src/app/planet-resolve.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__demo1_demo1_component__ = __webpack_require__("../../../../../src/app/demo1/demo1.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__demo2_demo2_component__ = __webpack_require__("../../../../../src/app/demo2/demo2.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__demo3_demo3_component__ = __webpack_require__("../../../../../src/app/demo3/demo3.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__demo4_demo4_component__ = __webpack_require__("../../../../../src/app/demo4/demo4.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__let_me_guard__ = __webpack_require__("../../../../../src/app/let-me-guard.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__demo1_demo1_component__ = __webpack_require__("../../../../../src/app/demo1/demo1.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__demo2_demo2_component__ = __webpack_require__("../../../../../src/app/demo2/demo2.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__demo3_demo3_component__ = __webpack_require__("../../../../../src/app/demo3/demo3.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__demo4_demo4_component__ = __webpack_require__("../../../../../src/app/demo4/demo4.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -156,6 +157,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -178,10 +180,10 @@ AppModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__angular_core__["b" /* NgModule */])({
         declarations: [
             __WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */],
-            __WEBPACK_IMPORTED_MODULE_9__demo1_demo1_component__["a" /* Demo1Component */],
-            __WEBPACK_IMPORTED_MODULE_10__demo2_demo2_component__["a" /* Demo2Component */],
-            __WEBPACK_IMPORTED_MODULE_11__demo3_demo3_component__["a" /* Demo3Component */],
-            __WEBPACK_IMPORTED_MODULE_12__demo4_demo4_component__["a" /* Demo4Component */]
+            __WEBPACK_IMPORTED_MODULE_10__demo1_demo1_component__["a" /* Demo1Component */],
+            __WEBPACK_IMPORTED_MODULE_11__demo2_demo2_component__["a" /* Demo2Component */],
+            __WEBPACK_IMPORTED_MODULE_12__demo3_demo3_component__["a" /* Demo3Component */],
+            __WEBPACK_IMPORTED_MODULE_13__demo4_demo4_component__["a" /* Demo4Component */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -190,7 +192,7 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_3__angular_forms__["b" /* FormsModule */],
             __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* RouterModule */].forRoot(__WEBPACK_IMPORTED_MODULE_5__app_routes__["a" /* AppRoutes */])
         ],
-        providers: [__WEBPACK_IMPORTED_MODULE_7__api_wars_service__["a" /* WarsService */], __WEBPACK_IMPORTED_MODULE_8__planet_resolve__["a" /* PlanetResolve */]],
+        providers: [__WEBPACK_IMPORTED_MODULE_7__api_wars_service__["a" /* WarsService */], __WEBPACK_IMPORTED_MODULE_8__planet_resolve__["a" /* PlanetResolve */], __WEBPACK_IMPORTED_MODULE_9__let_me_guard__["a" /* LetMeInGuard */], __WEBPACK_IMPORTED_MODULE_9__let_me_guard__["b" /* LetMeOutGuard */]],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
@@ -208,7 +210,9 @@ AppModule = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__demo3_demo3_component__ = __webpack_require__("../../../../../src/app/demo3/demo3.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__demo4_demo4_component__ = __webpack_require__("../../../../../src/app/demo4/demo4.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__planet_resolve__ = __webpack_require__("../../../../../src/app/planet-resolve.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__let_me_guard__ = __webpack_require__("../../../../../src/app/let-me-guard.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppRoutes; });
+
 
 
 
@@ -218,7 +222,7 @@ var AppRoutes = [
     { path: 'demo-1', component: __WEBPACK_IMPORTED_MODULE_0__demo1_demo1_component__["a" /* Demo1Component */] },
     { path: 'demo-2', component: __WEBPACK_IMPORTED_MODULE_1__demo2_demo2_component__["a" /* Demo2Component */] },
     { path: 'demo-3/:id', component: __WEBPACK_IMPORTED_MODULE_2__demo3_demo3_component__["a" /* Demo3Component */], resolve: { planet: __WEBPACK_IMPORTED_MODULE_4__planet_resolve__["a" /* PlanetResolve */] } },
-    { path: 'demo-4', component: __WEBPACK_IMPORTED_MODULE_3__demo4_demo4_component__["a" /* Demo4Component */] },
+    { path: 'demo-4', component: __WEBPACK_IMPORTED_MODULE_3__demo4_demo4_component__["a" /* Demo4Component */], canActivate: [__WEBPACK_IMPORTED_MODULE_5__let_me_guard__["a" /* LetMeInGuard */]], canDeactivate: [__WEBPACK_IMPORTED_MODULE_5__let_me_guard__["b" /* LetMeOutGuard */]] },
 ];
 //# sourceMappingURL=app.routes.js.map
 
@@ -422,8 +426,6 @@ var Demo3Component = (function () {
         this.route = route;
         this.info = this.route.snapshot.data['planet'];
     }
-    Demo3Component.prototype.ngOnInit = function () {
-    };
     return Demo3Component;
 }());
 Demo3Component = __decorate([
@@ -461,7 +463,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/demo4/demo4.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  demo4 works!\n</p>\n"
+module.exports = "<h2>Welcome to the dark side</h2>\n\n<img style=\"width:100%\" src=\"http://static.srcdn.com/wp-content/uploads/Star-Wars-7-Rumor-Emperor-Returning.jpg\" alt=\"star wars emperor\">\n"
 
 /***/ }),
 
@@ -498,6 +500,53 @@ Demo4Component = __decorate([
 ], Demo4Component);
 
 //# sourceMappingURL=demo4.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/let-me-guard.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Rx__ = __webpack_require__("../../../../rxjs/Rx.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_Rx__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LetMeInGuard; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return LetMeOutGuard; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+var LetMeInGuard = (function () {
+    function LetMeInGuard() {
+    }
+    LetMeInGuard.prototype.canActivate = function () {
+        var pass = (Math.random() > 0.8);
+        return __WEBPACK_IMPORTED_MODULE_1_rxjs_Rx__["Observable"].of(pass);
+    };
+    return LetMeInGuard;
+}());
+LetMeInGuard = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Injectable */])()
+], LetMeInGuard);
+
+var LetMeOutGuard = (function () {
+    function LetMeOutGuard() {
+    }
+    LetMeOutGuard.prototype.canDeactivate = function () {
+        var leave = (Math.random() > 0.8);
+        return __WEBPACK_IMPORTED_MODULE_1_rxjs_Rx__["Observable"].of(leave);
+    };
+    return LetMeOutGuard;
+}());
+LetMeOutGuard = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Injectable */])()
+], LetMeOutGuard);
+
+//# sourceMappingURL=let-me-guard.js.map
 
 /***/ }),
 
