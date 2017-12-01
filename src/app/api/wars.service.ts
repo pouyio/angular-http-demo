@@ -6,7 +6,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class WarsService {
 
-  private baseUrl = 'http://swapi.co/api';
+  private baseUrl = 'https://swapi.co/api';
 
   constructor(private http: Http) { }
 
