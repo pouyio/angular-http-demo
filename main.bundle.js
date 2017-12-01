@@ -37,7 +37,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var WarsService = (function () {
     function WarsService(http) {
         this.http = http;
-        this.baseUrl = 'http://swapi.co/api';
+        this.baseUrl = 'https://swapi.co/api';
     }
     WarsService.prototype.getPlanet = function (id) {
         return this.http.get(this.baseUrl + "/planets/" + id, { headers: this.getHeaders() }).map(function (r) { return r.json(); });
@@ -119,7 +119,7 @@ var AppComponent = (function () {
     return AppComponent;
 }());
 AppComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
         selector: 'app-root',
         template: __webpack_require__("../../../../../src/app/app.component.html"),
         styles: [__webpack_require__("../../../../../src/app/app.component.css")]
@@ -291,7 +291,7 @@ var Demo1Component = (function () {
     return Demo1Component;
 }());
 Demo1Component = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
         selector: 'app-demo1',
         template: __webpack_require__("../../../../../src/app/demo1/demo1.component.html"),
         styles: [__webpack_require__("../../../../../src/app/demo1/demo1.component.css")]
@@ -364,7 +364,7 @@ var Demo2Component = (function () {
     return Demo2Component;
 }());
 Demo2Component = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
         selector: 'app-demo2',
         template: __webpack_require__("../../../../../src/app/demo2/demo2.component.html"),
         styles: [__webpack_require__("../../../../../src/app/demo2/demo2.component.css")]
@@ -428,7 +428,7 @@ var Demo3Component = (function () {
     return Demo3Component;
 }());
 Demo3Component = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
         selector: 'app-demo3',
         template: __webpack_require__("../../../../../src/app/demo3/demo3.component.html"),
         styles: [__webpack_require__("../../../../../src/app/demo3/demo3.component.css")]
@@ -490,7 +490,7 @@ var Demo4Component = (function () {
     return Demo4Component;
 }());
 Demo4Component = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
         selector: 'app-demo4',
         template: __webpack_require__("../../../../../src/app/demo4/demo4.component.html"),
         styles: [__webpack_require__("../../../../../src/app/demo4/demo4.component.css")]
