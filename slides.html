@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+        @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+        body {
+            font-family: 'Droid Serif';
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Droid Serif';
+            font-weight: normal;
+        }
+
+        .remark-code,
+        .remark-inline-code {
+            font-family: 'Ubuntu Mono';
+        }
+        .small {
+            width: 100px;
+            heigth: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <textarea id="source">
+
+class: center, middle
+
+# Angular HTTP
+<img width="200px" src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Angular_full_color_logo.svg">
+
+---
+
+# Pasos
+
+1. ```ng new angular-http-module```
+2. ```ng g s api/wars```
+3. ```ng serve ```
+4. ...
+
+<div class="left">
+    <img width="200px" src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png">
+    <img width="200px" src="https://upload.wikimedia.org/wikipedia/commons/d/db/Npm-logo.svg">
+    <img width="300px" src="https://png2.kisspng.com/sh/0e3327ddf37b2b7fb13aa55d4a66d368/L0KzQYm3VMIzN6RpiZH0aYP2gLBuTgRzaadui59saT3mf7B7if52d6Z4Rdt3dHXqgrL7if9vNaR0fuZCYYLoPbP8ifxlNaR0RdV4boTsfsb2lgMufpZojNH7LUXkdLS5WMgyOZc8fdM8LkKzSIO4WMY1OWY3TKUCN0e1SYK5Wb5xdpg=/kisspng-travis-ci-continuous-integration-software-build-so-continuous-vector-5adc28811f7ea3.208218641524377729129.png">
+</div>
+    
+
+
+---
+class: middle
+
+# Topics
+
+- Suscribirse vs usar async pipe. [DEMO 🐸](../demo-1)
+- Buscador typeahead. [DEMO 💃](../demo-2)
+- Implementación Resolve. [DEMO 🐳](../demo-3)
+    - Error handling
+- Implementación Guards. [DEMO 🍑](../demo-4)
+    - CanActivate
+    - CanDeactivate
+
+---
+class: middle
+
+# Fuentes
+
+- [Guía angular.io](https://angular.io/guide/http)
+- [Guia con SWAPI](https://www.barbarianmeetscoding.com/blog/2016/04/02/getting-started-with-angular-2-step-by-step-6-consuming-real-data-with-http/)
+- [Guía Resolve](https://blog.thoughtram.io/angular/2016/10/10/resolving-route-data-in-angular-2.html)
+- [Http + Observables de Scotch.io](https://scotch.io/tutorials/angular-2-http-requests-with-observables?utm_content=buffer2e842&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer)
+- [Rx marbles](http://rxmarbles.com/)
+- [Resolves](https://blog.thoughtram.io/angular/2016/10/10/resolving-route-data-in-angular-2.html)
+- [Guards](https://blog.thoughtram.io/angular/2016/07/18/guards-in-angular-2.html)
+
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+        var slideshow = remark.create();
+    </script>
+</body>
+
+</html>
