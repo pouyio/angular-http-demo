@@ -74,7 +74,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "ul {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  padding: 0;\n  list-style: none;\n  -ms-flex-pack: distribute;\n      justify-content: space-around;\n}\n\ndiv {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: baseline;\n      -ms-flex-align: baseline;\n          align-items: baseline;\n}\n\ncode {\n  padding-left: 1em;\n}\n", ""]);
+exports.push([module.i, "ul {\n  display: -ms-flexbox;\n  display: flex;\n  padding: 0;\n  list-style: none;\n  -ms-flex-pack: distribute;\n      justify-content: space-around;\n}\n\ndiv {\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-pack: center;\n      justify-content: center;\n  -ms-flex-align: baseline;\n      align-items: baseline;\n}\n\ncode {\n  padding-left: 1em;\n}\n", ""]);
 
 // exports
 
