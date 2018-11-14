@@ -2,7 +2,7 @@
 
 This repo contains some demos on what the [@angular/http](https://angular.io/guide/http) module can do.
 
-Google slides [here](https://pouyio.github.io/angular-http-demo/slides.html)
+Google slides [here](https://docs.google.com/presentation/d/1lXmJzlKmAMJX8peNNn8YP4T1BdsHSO4kPa8iEuR1bTU/edit?usp=sharing)
 
 ## Local server
  
