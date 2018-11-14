@@ -5,7 +5,7 @@ This repo contains some demos on what the [@angular/http](https://angular.io/gui
 Google slides [here](https://docs.google.com/presentation/d/1lXmJzlKmAMJX8peNNn8YP4T1BdsHSO4kPa8iEuR1bTU/edit?usp=sharing)
 
 ## Local server
-
+ 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.1.3.
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will reload if you change any of the source files.
